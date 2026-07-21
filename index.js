@@ -25,6 +25,8 @@ function getDay() {
 }
 
 client.once('clientReady', () => {
+  console.log(`Bot conectado como ${client.user.tag}`)
+
   cron.schedule(
     '0 7 * * *',
     async () => {
