@@ -55,29 +55,29 @@ client.once('clientReady', () => {
   )
 })
 
-cron.schedule(
-  '0 */3 * * *',
-  async () => {
-    try {
-      const channel = await client.channels.fetch(process.env.CHANNEL_ID)
+// cron.schedule(
+//   '0 */3 * * *',
+//   async () => {
+//     try {
+//       const channel = await client.channels.fetch(process.env.CHANNEL_ID)
 
-      if (!channel) {
-        console.log('Canal não encontrado.')
-        return
-      }
+//       if (!channel) {
+//         console.log('Canal não encontrado.')
+//         return
+//       }
 
-      await channel.send(
-        '⏰ <@540325220943134731> <@1186315237029322834> <@1186316495484104704> <@490720166947192853>, passando para lembrar que você existe 😎'
-      )
+//       await channel.send(
+//         '⏰ <@540325220943134731> <@1186315237029322834> <@1186316495484104704> <@490720166947192853>, passando para lembrar que você existe 😎'
+//       )
 
-      console.log('Lembrete de 3 em 3 horas enviado.')
-    } catch (error) {
-      console.error('Erro ao enviar lembrete:', error)
-    }
-  },
-  {
-    timezone: 'America/Sao_Paulo'
-  }
-)
+//       console.log('Lembrete de 3 em 3 horas enviado.')
+//     } catch (error) {
+//       console.error('Erro ao enviar lembrete:', error)
+//     }
+//   },
+//   {
+//     timezone: 'America/Sao_Paulo'
+//   }
+// )
 
 client.login(process.env.DISCORD_TOKEN)
